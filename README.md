@@ -1,0 +1,2 @@
+# Kitchen-Chain-of-Responsibility
+In order to make a dish, you have to use a number of appliances and tools to turn raw ingredients into something edible. Using the chain of responsibility design pattern, raw ingredients act as input, while appliances and tools that can handle the ingredient act as states. If an appliance can not or should not handle an ingredient, it passed on to the next state until it can be handled.
