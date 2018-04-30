@@ -1,6 +1,10 @@
 #include "dish.h"
+#include <iostream>
+
 using std::string;
 using std::shared_ptr;
+using std::cout;
+using std::endl;
 
 void Dish::setNextKitchenTool(shared_ptr<Dish> kitchenTool)
 {
@@ -17,5 +21,8 @@ void Dish::appendKitchenToolToChain(shared_ptr<Dish> kitchenTool)
 
 void Dish::handleIngredient(const string & ingredient)
 {
-	_nextKitchenTool->handleIngredient(ingredient);
+	if (_nextKitchenTool)
+		_nextKitchenTool->handleIngredient(ingredient);
+	else
+		cout << "Dish complete!" << endl;
 }
