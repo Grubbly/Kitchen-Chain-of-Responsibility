@@ -10,7 +10,7 @@ void Oven::handleIngredient(const string & action, const string & ingredient)
 {
 	if (action == "bake")
 	{
-		cout << ingredient << " cooked by the oven" << endl;
+		cout << "\n---" << ingredient << " cooked by the oven---\n" << endl;
 	}
 	else
 	{
@@ -23,7 +23,7 @@ void Microwave::handleIngredient(const string & action, const string & ingredien
 {
 	if (action == "microwave")
 	{
-		cout << ingredient << " was microwaved" << endl;
+		cout << "\n---" << ingredient << " was microwaved---\n" << endl;
 	}
 	else
 	{
@@ -36,7 +36,7 @@ void Stove::handleIngredient(const string & action, const string & ingredient)
 {
 	if (action == "boil" || action == "saute")
 	{
-		cout << ingredient << " was " << action << (action == "boil" ? "ed" : "d") << " by the stove";
+		cout << "\n---" << ingredient << " was " << action << (action == "boil" ? "ed" : "d") << " by the stove---\n" << endl;
 	}
 	else
 	{

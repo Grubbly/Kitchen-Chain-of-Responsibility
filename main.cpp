@@ -33,7 +33,7 @@ Dish prepareChickenNoodleSoup(const vector<shared_ptr<Dish>> & kitchenToolList)
 int main()
 {
 	Dish chickenNoodleSoup;
-	vector<shared_ptr<Dish>> aKitchen = { make_shared<Oven>(), make_shared<Microwave>(), make_shared<Oven>() };
+	vector<shared_ptr<Dish>> aKitchen = { make_shared<Oven>(), make_shared<Microwave>(), make_shared<Oven>(), make_shared<Stove>() };
 	try {
 		chickenNoodleSoup = prepareChickenNoodleSoup(aKitchen);
 	} catch(exception & e) {
@@ -42,8 +42,9 @@ int main()
 
 	chickenNoodleSoup.handleIngredient("meme", "butter");
 	chickenNoodleSoup.handleIngredient("bake", "meat");
-	chickenNoodleSoup.handleIngredient("boil", "carrot");
+	chickenNoodleSoup.handleIngredient("saute", "carrot");
 	chickenNoodleSoup.handleIngredient("microwave", "butter");
+	chickenNoodleSoup.handleIngredient("boil", "water");
 
 	std::cin.get();
 }

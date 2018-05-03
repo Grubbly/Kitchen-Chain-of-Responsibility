@@ -26,6 +26,6 @@ void Dish::handleIngredient(const string & action, const string & ingredient)
 	if (_nextKitchenTool)
 		_nextKitchenTool->handleIngredient(action, ingredient);
 	else
-		cout << "\n*** The specified kitchen could not handle \"" << action << " " << ingredient << "\" \nAppend more kitchen tools or change handleIngredient parameters. ***\n" << endl;
+		cout << "\n*** The specified kitchen could not handle \"" << action << " " << ingredient << "\" ***\n*** Append more kitchen tools or change handleIngredient parameters. ***\n" << endl;
 }
 
