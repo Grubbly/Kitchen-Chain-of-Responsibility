@@ -1,10 +1,12 @@
 #include "dish.h"
 #include <iostream>
+#include <utility>
 
 using std::string;
 using std::shared_ptr;
 using std::cout;
 using std::endl;
+using std::pair;
 
 void Dish::setNextKitchenTool(shared_ptr<Dish> kitchenTool)
 {
@@ -19,10 +21,11 @@ void Dish::appendKitchenToolToChain(shared_ptr<Dish> kitchenTool)
 		_nextKitchenTool = kitchenTool;
 }
 
-void Dish::handleIngredient(const string & ingredient)
+void Dish::handleIngredient(const string & action, const string & ingredient)
 {
 	if (_nextKitchenTool)
-		_nextKitchenTool->handleIngredient(ingredient);
+		_nextKitchenTool->handleIngredient(action, ingredient);
 	else
-		cout << "Dish complete!" << endl;
+		cout << "\n*** The specified kitchen could not handle \"" << action << " " << ingredient << "\" \nAppend more kitchen tools or change handleIngredient parameters. ***\n" << endl;
 }
+

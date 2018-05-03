@@ -8,6 +8,7 @@
 
 #include <memory>
 #include <string>
+#include <utility>
 
 #ifndef DISH_H
 #define DISH_H
@@ -18,7 +19,7 @@ public:
 	Dish(std::shared_ptr<Dish> kitchenTool) : _nextKitchenTool(kitchenTool) {};
 	void setNextKitchenTool(std::shared_ptr<Dish> kitchenTool);
 	void appendKitchenToolToChain(std::shared_ptr<Dish> kitchenTool);
-	virtual void handleIngredient(const std::string & ingredient);
+	virtual void handleIngredient(const std::string & action, const std::string & ingredient);
 private:
 	std::shared_ptr<Dish> _nextKitchenTool;
 };

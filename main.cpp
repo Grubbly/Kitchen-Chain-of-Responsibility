@@ -5,6 +5,7 @@
 #include <exception>
 #include <memory>
 #include <iostream>
+#include <utility>
 
 using std::string;
 using std::vector;
@@ -14,6 +15,8 @@ using std::shared_ptr;
 using std::cout;
 using std::endl;
 using std::cin;
+using std::pair;
+using std::make_pair;
 
 Dish prepareChickenNoodleSoup(const vector<shared_ptr<Dish>> & kitchenToolList)
 {
@@ -30,15 +33,17 @@ Dish prepareChickenNoodleSoup(const vector<shared_ptr<Dish>> & kitchenToolList)
 int main()
 {
 	Dish chickenNoodleSoup;
-	vector<shared_ptr<Dish>> aKitchen = { make_shared<Oven>(), make_shared<Oven>() };
+	vector<shared_ptr<Dish>> aKitchen = { make_shared<Oven>(), make_shared<Microwave>(), make_shared<Oven>() };
 	try {
 		chickenNoodleSoup = prepareChickenNoodleSoup(aKitchen);
 	} catch(exception & e) {
 		e.what();
 	}
 
-	chickenNoodleSoup.handleIngredient("meat");
-	chickenNoodleSoup.handleIngredient("carrot");
+	chickenNoodleSoup.handleIngredient("meme", "butter");
+	chickenNoodleSoup.handleIngredient("bake", "meat");
+	chickenNoodleSoup.handleIngredient("boil", "carrot");
+	chickenNoodleSoup.handleIngredient("microwave", "butter");
 
 	std::cin.get();
 }
