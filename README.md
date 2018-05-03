@@ -54,5 +54,8 @@ mac.handleIngredient("mix", "noodles and cheese");
 //Mac & Cheese Complete!
 ```
 
+## Sample Output:
+![Sample Output](sampleOut.PNG)
+
 # Resources
 https://sourcemaking.com/design_patterns/chain_of_responsibility/cpp/1
