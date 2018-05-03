@@ -1,4 +1,5 @@
 #include "kitchen.h"
+#include "test.h"
 
 #include <vector>
 #include <string>
@@ -17,70 +18,6 @@ using std::endl;
 using std::cin;
 using std::pair;
 using std::make_pair;
-
-Dish chainKitchenTools(const vector<shared_ptr<Dish>> & kitchenTools)
-{
-	if (kitchenTools.size() <= 0)
-		throw exception("A dish must have at least 1 appliance or small kitchen tool!\n\n");
-
-	Dish chainedDish(kitchenTools[0]);
-	for (unsigned int toolNum = 1; toolNum < kitchenTools.size(); toolNum++)
-		chainedDish.appendKitchenToolToChain(kitchenTools[toolNum]);
-
-	return chainedDish;
-}
-
-void makeChickenNoodleSoup(const vector<shared_ptr<Dish>> & kitchenTools)
-{
-	Dish chickenNoodleSoup = chainKitchenTools(kitchenTools);
-
-	chickenNoodleSoup.handleIngredient("gobble", "butter");
-	chickenNoodleSoup.handleIngredient("bake", "chicken");
-	chickenNoodleSoup.handleIngredient("saute", "carrot");
-	chickenNoodleSoup.handleIngredient("microwave", "broth");
-	chickenNoodleSoup.handleIngredient("boil", "water");
-	chickenNoodleSoup.handleIngredient("pour", "broth");
-	chickenNoodleSoup.handleIngredient("mix", "carrot and chicken");
-}
-
-void makeMacNCheese(const vector<shared_ptr<Dish>> & kitchenTools)
-{
-	Dish mac = chainKitchenTools(kitchenTools);
-
-	mac.handleIngredient("boil", "water");
-	mac.handleIngredient("boil", "noodles in water");
-	mac.handleIngredient("drain", "noodles");
-	mac.handleIngredient("mix", "noodles and cheese");
-}
-
-void makeChile(const vector<shared_ptr<Dish>> & kitchenTools)
-{
-	Dish chile = chainKitchenTools(kitchenTools);
-
-	chile.handleIngredient("open", "chile can");
-	chile.handleIngredient("microwave", "chile");
-}
-
-void makeBurger(const vector<shared_ptr<Dish>> & kitchenTools)
-{
-	Dish burger = chainKitchenTools(kitchenTools);
-
-	burger.handleIngredient("saute", "patty");
-	burger.handleIngredient("cut", "lettuce");
-	burger.handleIngredient("quarter", "tomato");
-	burger.handleIngredient("slice", "tomato");
-	burger.handleIngredient("dice", "onion");
-	burger.handleIngredient("flip", "patty");
-}
-
-void makeEggs(const vector<shared_ptr<Dish>> & kitchenTools)
-{
-	Dish eggs = chainKitchenTools(kitchenTools);
-
-	eggs.handleIngredient("whisk", "egg");
-	eggs.handleIngredient("cook", "scrambled egg");
-	eggs.handleIngredient("flip", "scrambled egg");
-}
 
 int main()
 {
@@ -143,6 +80,19 @@ int main()
 	aKitchen = { make_shared<Whisk>(), make_shared<Spatula>(), make_shared<Stove>() };
 	try {
 		makeEggs(aKitchen);
+	}
+	catch (exception & e) {
+		cout << e.what() << endl;
+	}
+
+
+	cout << "\n\nRANDOM BAD ACTIONS\n\n" << endl;
+	/*** RANDOM BAD ACTIONS ***/
+	aKitchen = { make_shared<Whisk>(), make_shared<Spatula>(), make_shared<Stove>(),
+				 make_shared<Microwave>(), make_shared<Strainer>(), make_shared<Oven>(),
+				 make_shared<Knife>(), make_shared<MixingBowl>(), make_shared<CanOpener>() };
+	try {
+		makeNothing(aKitchen);
 	}
 	catch (exception & e) {
 		cout << e.what() << endl;
