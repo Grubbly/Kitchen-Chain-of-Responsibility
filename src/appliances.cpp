@@ -1,3 +1,11 @@
+/*
+appliances.cpp
+Tristan Van Cise
+Software Construction Final
+05/03/2018
+Source file for Appliance classified classes
+*/
+
 #include "appliances.h"
 #include <iostream>
 #include <string>

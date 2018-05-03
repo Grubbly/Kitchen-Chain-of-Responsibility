@@ -1,3 +1,11 @@
+/*
+smallKitchenTools.h
+Tristan Van Cise
+Software Construction Final
+05/03/2018
+Header for Small Kitchen Tool classes inherited from Dish
+*/
+
 #include "dish.h"
 #include <string>
 

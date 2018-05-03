@@ -1,3 +1,11 @@
+/*
+appliances.cpp
+Tristan Van Cise
+Software Construction Final
+05/03/2018
+Source file test function definitions
+*/
+
 #include <vector>
 using std::vector;
 #include <exception>

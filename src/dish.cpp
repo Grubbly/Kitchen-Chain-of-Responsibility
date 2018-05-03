@@ -1,3 +1,11 @@
+/*
+dish.cpp
+Tristan Van Cise
+Software Construction Final
+05/03/2018
+Source file for Dish base class
+*/
+
 #include "dish.h"
 #include <iostream>
 #include <utility>

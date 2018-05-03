@@ -1,3 +1,12 @@
+/*
+smallKitchenTools.cpp
+Tristan Van Cise
+Software Construction Final
+05/03/2018
+Source file for Small Kitchen Tool classified classes
+*/
+
+
 #include "smallKitchenTools.h"
 #include <string>
 #include <iostream>

@@ -1,3 +1,11 @@
+/*
+test.h
+Tristan Van Cise
+Software Construction Final
+05/03/2018
+Header for test functions
+*/
+
 #include "kitchen.h"
 #include <vector>
 #include <memory>

@@ -1,3 +1,11 @@
+/*
+main.cpp
+Tristan Van Cise
+Software Construction Final
+05/03/2018
+Main - runs tests in regards to kitchen module
+*/
+
 #include "kitchen.h"
 #include "test.h"
 

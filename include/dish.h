@@ -3,7 +3,7 @@
 	Tristan Van Cise
 	Software Construction Final
 	04/30/2018
-	Header for Chain of Responsibility Kitchen design pattern.
+	Header for Base Class of Chain of Responsibility Kitchen design pattern.
 */
 
 #include <memory>
