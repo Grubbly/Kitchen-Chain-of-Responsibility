@@ -14,7 +14,7 @@ void Oven::handleIngredient(const string & action, const string & ingredient)
 	}
 	else
 	{
-		cout << "oven could not cook the " + ingredient + " - passing it onto the next kitchen tool..." << endl;
+		cout << "oven could not " << action << " the " + ingredient + " - passing it onto the next kitchen tool..." << endl;
 		Dish::handleIngredient(action, ingredient);
 	}
 }
@@ -27,20 +27,20 @@ void Microwave::handleIngredient(const string & action, const string & ingredien
 	}
 	else
 	{
-		cout << "Microwave could not heat the " + ingredient + " - passing it onto the next kitchen tool..." << endl;
+		cout << "Microwave could not " << action << " the " + ingredient + " - passing it onto the next kitchen tool..." << endl;
 		Dish::handleIngredient(action, ingredient);
 	}
 }
 
 void Stove::handleIngredient(const string & action, const string & ingredient)
 {
-	if (action == "boil" || action == "saute")
+	if (action == "boil" || action == "saute" || action == "cook")
 	{
-		cout << "\n---" << ingredient << " was " << action << (action == "boil" ? "ed" : "d") << " by the stove---\n" << endl;
+		cout << "\n---" << ingredient << " was " << action << (action == "saute" ? "d" : "ed") << " by the stove---\n" << endl;
 	}
 	else
 	{
-		cout << "Stove could not cook the " + ingredient + " - passing it onto the next kitchen tool..." << endl;
+		cout << "Stove could not " << action << " the " + ingredient + " - passing it onto the next kitchen tool..." << endl;
 		Dish::handleIngredient(action, ingredient);
 	}
 }

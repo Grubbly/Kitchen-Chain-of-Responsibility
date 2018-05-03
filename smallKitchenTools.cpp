@@ -36,7 +36,7 @@ void Knife::handleIngredient(const std::string & action, const std::string & ing
 	if (action == "cut" || action == "slice" || action == "dice" || action == "quarter")
 	{
 		cout << "\n---" << ingredient << " was " << action 
-			 << (action == "cut" ? "" : (action == "quarter" ? "ed" : "d")) <<" by the whisk---\n" << endl;
+			 << (action == "cut" ? "" : (action == "quarter" ? "ed" : "d")) <<" by the knife---\n" << endl;
 	}
 	else
 	{
